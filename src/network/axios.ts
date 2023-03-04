@@ -1,14 +1,12 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-console */
 import axios from "axios";
-import { API_TIMEOUT, API_URL, CF_ACCESS_KEY } from "../utils/constants";
+import { API_TIMEOUT, API_URL } from "../utils/constants";
 
 const apiClient = axios.create({
   timeout: API_TIMEOUT,
   headers: {
     Accept: "*/*",
     "Content-Type": "application/json",
-    cfACcessKey: CF_ACCESS_KEY,
+    cfAccessKey: process.env.NEXT_PUBLIC_CF_ACCESS_KEY,
   },
 });
 
